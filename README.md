@@ -19,25 +19,25 @@ This program helps the programmer to identify which files are used in the projec
 
 When you click on the "Check" button, all files that have been added for verification will be searched in all files of the folder where dependencies are expected.
 
-!["Check files"](./tutorial/check.gif)
+![Check files](./tutorial/check.gif)
 
 <h3 id="viewDependencies">Viewing dependencies</h3>
 
-On the top left there is a field where you added files for verification. After you click on one of them, you will see that they lit up blue !["BLUE"](https://via.placeholder.com/15/0391DD/000000?text=+). This means that you have selected it and then in the opposite side on the right you will see in which files of the folder the selected file is present. By clicking on the name of the file in which there is a dependency, you can view its contents in the field on the bottom left. When you scroll through, you will come across a dependent file that will be marked yellow !["Yellow"](https://via.placeholder.com/15/F59E0B/000000?text=+). There is also a button on top of this field to add this file to the exception.
+On the top left there is a field where you added files for verification. After you click on one of them, you will see that they lit up blue 🔵. This means that you have selected it and then in the opposite side on the right you will see in which files of the folder the selected file is present. By clicking on the name of the file in which there is a dependency, you can view its contents in the field on the bottom left. When you scroll through, you will come across a dependent file that will be marked yellow 🟡. There is also a button on top of this field to add this file to the exception.
 
-!["Check files"](./tutorial/viewFiles.gif)
+![View files](./tutorial/viewFiles.gif)
 
 <h3 id="exceptions">Exceptions</h3>
 
-When you drag the folder in which you want to detect dependencies, then at the bottom right you will see the structure of this folder. By clicking on the checkboxes, you can add folders and files to exceptions. Then they will not be checked during the check and when you decide to replace the path, these files will also not be involved. Files added to exceptions are marked yellow !["Yellow"](https://via.placeholder.com/15/F59E0B/000000?text=+).
+When you drag the folder in which you want to detect dependencies, then at the bottom right you will see the structure of this folder. By clicking on the checkboxes, you can add folders and files to exceptions. Then they will not be checked during the check and when you decide to replace the path, these files will also not be involved. Files added to exceptions are marked yellow 🟡.
 
-!["Check files"](./tutorial/exceptions.gif)
+![Exceptions](./tutorial/exceptions.gif)
 
 <h3 id="unusedFiles">Unused files</h3>
 
-After checking, some files are repainted in red !["RED"](https://via.placeholder.com/15/D81E5B/000000?text=+), which means that these files were not found in the folder and are not being used. In the field you can click on the "Delete unused files" button. But before doing this, I recommend checking it by moving the specified files to another folder and checking how the project will work. Remember that sometimes pictures can be displayed due to some variables. Example: `` <img src={`./img/printer${isPrintActive ? '-active' : ''}.svg`} `` The program is not able to recognize such checks. Also, if you are sure that the file is in use, you can remove it from the list of unused files by clicking on the yellow recovery icon that appears next to the red files.
+After checking, some files are repainted in red 🔴, which means that these files were not found in the folder and are not being used. In the field you can click on the "Delete unused files" button. But before doing this, I recommend checking it by moving the specified files to another folder and checking how the project will work. Remember that sometimes pictures can be displayed due to some variables. Example: `` <img src={`./img/printer${isPrintActive ? '-active' : ''}.svg`} `` The program is not able to recognize such checks. Also, if you are sure that the file is in use, you can remove it from the list of unused files by clicking on the yellow recovery icon that appears next to the red files.
 
-!["Check files"](./tutorial/unusedFiles.gif)
+![Unused files](./tutorial/unusedFiles.gif)
 
 <h3 id="replacingPath">Replacing the path</h3>
 
@@ -47,13 +47,13 @@ After checking, some files are repainted in red !["RED"](https://via.placeholder
 
 - If you want to change a certain path, then write "Path to replace". And then enter the new path "New path". Otherwise, only the path that makes up the name of the dependency file will change.
 
-!["Check files"](./tutorial/replacingPath.gif)
+![Replacing paths](./tutorial/replacingPath.gif)
 
 <h3 id="openFile">Opening a file in the file manager</h3>
 
 There is a path near the name of a file. If you click on it, a file manager will open with the specified file.
 
-!["Check files"](./tutorial/openFile.gif)
+![Open file](./tutorial/openFile.gif)
 
 <h2 id="howBuild">How to build</h2>
 
