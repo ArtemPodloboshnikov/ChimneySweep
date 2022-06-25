@@ -12,6 +12,9 @@ This program helps the programmer to identify which files are used in the projec
   - <a href="#unusedFiles">Unused files</a>
   - <a href="#openFile">Opening a file in the file manager</a>
 - <a href="#howBuild">How to build</a>
+  - <a href="#windows">Windows</a>
+  - <a href="#linux">Linux</a>
+  - <a href="#mac">MacOS</a>
 
 <h2 id="howUse">How to use</h2>
 
@@ -57,4 +60,16 @@ There is a path near the name of a file. If you click on it, a file manager will
 
 <h2 id="howBuild">How to build</h2>
 
-The application can be built for all platforms. In the package.json in the build section has all the necessary settings. For Windows, you can build a portable version if you add "portable" to the array in the win -> target field. To make an assembly for a particular operating system, you need to install node.js and make `npm i`. Next, enter `npm run build:win(/linux/mac)` depending on the operating system
+The application can be built for all platforms. In the package.json in the build section has all the necessary settings. To make an assembly for a particular operating system, you need to install node.js and make `npm i`. Next, enter `npm run build:win(/linux/mac)` depending on the operating system. After that, the `dist` folder will appear in the same directory. It will contain the installation file or the program itself, depending on the settings in the `build` section.
+
+<h3 id="windows">Windows</h3>
+
+For Windows, you can build a portable version if you add "portable" to the array in the win -> target field.
+
+<h3 id="linux">Linux</h3>
+
+There may be an error during assembly. But you need to go to the `dist` folder and find the program there. Or change the settings in `build` for your version of the Linux distribution.
+
+<h3 id="mac">MacOS</h3>
+
+I didn 't have a chance to check.
