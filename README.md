@@ -2,7 +2,7 @@
 
 <p align="center"><img src="./public/icon256x256.png"/></p>
 
-This program helps the programmer to identify which files are used in the project and which are not. It is able to delete all unused resources, as well as change the paths for used resources. It will be very useful for cleaning large projects from unnecessary files
+This program helps the programmer to identify which files are used in the project and which are not. It is able to delete all unused resources, as well as change the paths for used resources. It will be very useful for cleaning large projects from unnecessary files.
 
 - <a href="#howUse">How to use</a>
   - <a href="#check">Check</a>
