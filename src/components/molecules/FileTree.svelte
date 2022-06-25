@@ -7,13 +7,13 @@
   const getPureFolderPath = (
     path: string,
     folder: string
-  ): { pathSplit: string[]; path: string, indexDel: number } => {
+  ): { pathSplit: string[]; path: string; indexDel: number } => {
     const path_arr = path.split("/");
     const startDeleteElements = path_arr.indexOf(folder);
-    return { 
-      pathSplit: path_arr.splice(startDeleteElements), 
+    return {
+      pathSplit: path_arr.splice(startDeleteElements),
       path,
-      indexDel: startDeleteElements
+      indexDel: startDeleteElements,
     };
   };
 
@@ -45,9 +45,12 @@
       if (file !== undefined) {
         const parent = allFiles[i].pathSplit.slice(0, level).join("/");
         const doc = { name: file, parent, path: allFiles[i].path };
-        const originPath = allFiles[i].path.split("/").filter(
-          (p, index) => index < allFiles[i].indexDel
-        ).filter(Boolean).join("/") + `/${parent}/${file}`;
+        const originPath =
+          allFiles[i].path
+            .split("/")
+            .filter((p, index) => index < allFiles[i].indexDel)
+            .filter(Boolean)
+            .join("/") + `/${parent}/${file}`;
         if (await isDirectory(originPath)) {
           if (
             folders.filter(
@@ -58,9 +61,8 @@
           }
         } else {
           if (
-            files.filter(
-              (f) => f.name === file && f.parent === parent
-            ).length === 0
+            files.filter((f) => f.name === file && f.parent === parent)
+              .length === 0
           ) {
             files.push(doc);
           }
@@ -79,14 +81,14 @@
     }
 
     return files;
-  }
+  };
 </script>
 
 <section>
   {#if $currentFolder.name !== ""}
-    <ul>
-      <li>
-        {#await levelFiles() then files}
+    {#await levelFiles() then files}
+      <ul>
+        <li>
           <FolderTree
             levelFiles={files}
             folderPath={files[0].folders.length !== 0
@@ -96,9 +98,9 @@
             level={0}
             open
           />
-        {/await}
-      </li>
-    </ul>
+        </li>
+      </ul>
+    {/await}
   {/if}
 </section>
 
