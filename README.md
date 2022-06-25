@@ -1,6 +1,6 @@
 # ChimneySweep
 
-<div style="display: grid; width: 100%; justify-items: center; height: fit-content;"><img src="./public/icon256x256.png"/></div>
+<p align="center"><img src="./public/icon256x256.png"/></p>
 
 This program helps the programmer to identify which files are used in the project and which are not. It is able to delete all unused resources, as well as change the paths for used resources. It will be very useful for cleaning large projects from unnecessary files
 
@@ -23,19 +23,19 @@ When you click on the "Check" button, all files that have been added for verific
 
 <h3 id="viewDependencies">Viewing dependencies</h3>
 
-On the top left there is a field where you added files for verification. After you click on one of them, you will see that they lit up blue. This means that you have selected it and then in the opposite side on the right you will see in which files of the folder the selected file is present. By clicking on the name of the file in which there is a dependency, you can view its contents in the field on the bottom left. When you scroll through, you will come across a dependent file that will be marked <font color="#F59E0B">yellow</font>. There is also a button on top of this field to add this file to the exception.
+On the top left there is a field where you added files for verification. After you click on one of them, you will see that they lit up blue. This means that you have selected it and then in the opposite side on the right you will see in which files of the folder the selected file is present. By clicking on the name of the file in which there is a dependency, you can view its contents in the field on the bottom left. When you scroll through, you will come across a dependent file that will be marked <span style='color: "#F59E0B"'>yellow</span>. There is also a button on top of this field to add this file to the exception.
 
 !["Check files"](./tutorial/viewFiles.gif)
 
 <h3 id="exceptions">Exceptions</h3>
 
-When you drag the folder in which you want to detect dependencies, then at the bottom right you will see the structure of this folder. By clicking on the checkboxes, you can add folders and files to exceptions. Then they will not be checked during the check and when you decide to replace the path, these files will also not be involved. Files added to exceptions are marked <font color="#F59E0B">yellow</font>.
+When you drag the folder in which you want to detect dependencies, then at the bottom right you will see the structure of this folder. By clicking on the checkboxes, you can add folders and files to exceptions. Then they will not be checked during the check and when you decide to replace the path, these files will also not be involved. Files added to exceptions are marked <span style='color: "#F59E0B"'>yellow</span>.
 
 !["Check files"](./tutorial/exceptions.gif)
 
 <h3 id="unusedFiles">Unused files</h3>
 
-After checking, some files are repainted in <font color="#D81E5B">red</font>, which means that these files were not found in the folder and are not being used. In the field you can click on the "Delete unused files" button. But before doing this, I recommend checking it by moving the specified files to another folder and checking how the project will work. Remember that sometimes pictures can be displayed due to some variables. Example: `` <img src={`./img/printer${isPrintActive ? '-active' : ''}.svg`} `` The program is not able to recognize such checks. Also, if you are sure that the file is in use, you can remove it from the list of unused files by clicking on the yellow recovery icon that appears next to the red files.
+After checking, some files are repainted in <span style='color: "#D81E5B"'>red</span>, which means that these files were not found in the folder and are not being used. In the field you can click on the "Delete unused files" button. But before doing this, I recommend checking it by moving the specified files to another folder and checking how the project will work. Remember that sometimes pictures can be displayed due to some variables. Example: `` <img src={`./img/printer${isPrintActive ? '-active' : ''}.svg`} `` The program is not able to recognize such checks. Also, if you are sure that the file is in use, you can remove it from the list of unused files by clicking on the yellow recovery icon that appears next to the red files.
 
 !["Check files"](./tutorial/unusedFiles.gif)
 
