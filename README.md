@@ -64,7 +64,7 @@ The application can be built for all platforms. In the package.json in the build
 
 <h3 id="windows">Windows</h3>
 
-For Windows, you can build a portable version if you add "portable" to the array in the win -> target field.
+For Windows, you can build a portable version if you add "portable" to the array in the `build -> win -> target field`.
 
 <h3 id="linux">Linux</h3>
 
