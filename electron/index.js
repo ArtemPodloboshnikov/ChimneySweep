@@ -38,7 +38,7 @@ function main () {
         webPreferences: {
             nodeIntegration: true,
             preload: join(__dirname, 'preload.js'),
-            // devTools: false
+            devTools: false
         },
         autoHideMenuBar: true,
         vibrancy: 'ultra-dark',
