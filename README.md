@@ -60,7 +60,7 @@ There is a path near the name of a file. If you click on it, a file manager will
 
 <h2 id="howBuild">How to build</h2>
 
-The application can be built for all platforms. In the package.json in the build section has all the necessary settings. To make an assembly for a particular operating system, you need to install node.js and make `npm i`. Next, enter `npm run build:win(/linux/mac)` depending on the operating system. After that, the `dist` folder will appear in the same directory. It will contain the installation file or the program itself, depending on the settings in the `build` section.
+The application can be built for all platforms. In the package.json in the build section has all the necessary settings. To make an assembly for a particular operating system, you need to install `node.js` and <a href="https://github.com/ArtemPodloboshnikov/ChimneySweep/archive/refs/heads/main.zip">download the Chimney Sweep code</a>. After that, you need to open a command prompt in the code folder and enter the following commands: `npm i` and `nom run build:win(/linux/mac)` depending on your operating system. After that, the `dist` folder will appear in the same directory. It will contain the installation file or the program itself, depending on the settings in the `build` section.
 
 <h3 id="windows">Windows</h3>
 
