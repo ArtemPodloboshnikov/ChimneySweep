@@ -1,7 +1,7 @@
 {
   "name": "chimney_sweep",
   "productName": "ChimneySweep",
-  "version": "1.0.0-prod",
+  "version": "1.0.1-prod",
   "private": true,
   "homepage": "./",
   "main": "./electron/index.js",
