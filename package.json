@@ -5,7 +5,7 @@
   "private": true,
   "homepage": "./",
   "main": "./electron/index.js",
-  "author": "Artem Podloboshnikov",
+  "author": "Artem Podloboshnikov <Artem@other.mail>",
   "description": "App cleans the project from unused files",
   "repository": "https://github.com/ArtemPodloboshnikov/ChimneySweep.git",
   "scripts": {
@@ -29,11 +29,14 @@
     },
     "linux": {
       "target": [
+        "AppImage",
         "deb",
         "snap",
-        "rmp"
+        "rpm",
+        "pacman"
       ],
-      "category": "Utility"
+      "category": "Utility",
+      "icon": "./public/icon256x256.png"
     },
     "mac": {
       "category": "Utility",
