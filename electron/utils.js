@@ -2,6 +2,17 @@ const fs = require('fs');
 const { join } = require('path');
 const { shell } = require('electron');
 
+function orientationOfDocument(event, path, isDirectory) {
+    const opsys = process.platform;
+    path = opsys === "linux" ? `/${path}` : path;
+    let stat = fs.statSync(path);
+    if (isDirectory) {
+        return stat.isDirectory();
+    } else {
+        return stat.isFile();
+    }
+}
+
 function getFileStructure(event, currentDirPath) {
     let files = [];
     if (currentDirPath !== undefined) {
@@ -9,7 +20,12 @@ function getFileStructure(event, currentDirPath) {
             let filePath = join(currentDirPath, name);
             let stat = fs.statSync(filePath);
             if (stat.isFile()) {
-                files.push(filePath.split('\\').join('/'));
+                const filePathArr = filePath.split('\\');
+                if (filePathArr.length === 1) {
+                    files.push(filePathArr[0]);
+                } else {
+                    files.push(filePathArr.join('/'));
+                }
             } else if (stat.isDirectory()) {
                 files = [...files, ...getFileStructure(event, filePath)];
             }
@@ -76,5 +92,6 @@ module.exports = Object.freeze({getFileStructure,
     searchDependencies,
     replaceDataDependent,
     deleteDependents,
-    showFileInFileManager
+    showFileInFileManager,
+    orientationOfDocument
 });
