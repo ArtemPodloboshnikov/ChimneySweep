@@ -7,7 +7,7 @@
   "main": "./electron/index.js",
   "author": "Artem Podloboshnikov",
   "description": "App cleans the project from unused files",
-  "repository": "",
+  "repository": "https://github.com/ArtemPodloboshnikov/ChimneySweep.git",
   "scripts": {
     "build": "rollup -c",
     "build:win": "npm run build && electron-builder -w",
