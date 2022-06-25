@@ -14,11 +14,8 @@
 
   let exceptionFlags = { [name]: disabled };
 
-  const toggleException = (title: string) => {
+  const toggleException = (title: string, isFolder: boolean) => {
     exceptions.update((except) => {
-      const currentName = title.split("/")[title.split("/").length - 1];
-      const splitName = currentName.split(".");
-      const isFolder = splitName[1] === undefined || splitName[0] === "";
       if (!isException(title)) {
         if (isFolder) {
           exceptionFlags[name] = true;
@@ -58,7 +55,7 @@
       &#128448;
     {/if}
   </span>
-  <button {disabled} on:click={() => toggleException(folderPath)}>
+  <button {disabled} on:click={() => toggleException(folderPath, true)}>
     {@html exceptionContent(folderPath)}
   </button>
 </li>
@@ -75,7 +72,7 @@
           {file.name}
           <button
             disabled={disabled || exceptionFlags[name]}
-            on:click={() => toggleException(file.path)}
+            on:click={() => toggleException(file.path, false)}
           >
             {@html exceptionContent(file.path)}
           </button>

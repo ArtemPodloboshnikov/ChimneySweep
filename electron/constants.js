@@ -6,5 +6,6 @@ module.exports = Object.freeze({
     CHANNEL_REPLACE_DEPENDENT: 'replaceDependent',
     CHANNEL_DELETE_DEPENDENT: 'deleteDependents',
     CHANNEL_CLOSE_APP: 'closeApp',
-    CHANNEL_SHOW_FILE: 'showFile'
+    CHANNEL_SHOW_FILE: 'showFile',
+    CHANNEL_DOCUMENT_ORIENTATION: 'documentOrientation'
 })

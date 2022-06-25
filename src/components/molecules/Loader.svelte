@@ -4,6 +4,7 @@
   import { currentFolder, File } from "../../store/currentFolder";
   import { exceptions } from "../../store/exceptions";
   import { FileCheck, filesCheck } from "../../store/filesCheck";
+  import { isDirectory, isFile } from "../../utils";
   import DialogWindow from "../atoms/DialogWindow.svelte";
 
   export let type: loaderType;
@@ -26,11 +27,14 @@
 
       for (const f of event.dataTransfer.files) {
         //@ts-ignore
-        const path: string[] = f.path.split("\\");
+        let path: string[] = f.path.split("\\");
+        if (path.length === 1) {
+          //@ts-ignore
+          path = f.path.split("/");
+        }
         const name: string = path[path.length - 1];
-        const nameSplit = name.split(".");
         if (type === loaderType.BUTTON) {
-          if (nameSplit[1] === undefined || nameSplit[0] === "") {
+          if (await isDirectory(path.join("/"))) {
             currentFolder.update((folder) => ({
               name: "",
               files: folder.files,
@@ -51,7 +55,7 @@
             errorMessage = `"${name}" not a folder`;
           }
         } else if (type === loaderType.MESSAGE) {
-          if (nameSplit[1] !== undefined && nameSplit[0] !== "") {
+          if (await isFile(path.join("/"))) {
             let files: FileCheck[] = [
               ...$filesCheck,
               { name, path: path.join("/") },
