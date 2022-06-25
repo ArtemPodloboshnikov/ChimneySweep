@@ -1,0 +1,92 @@
+{
+  "name": "chimney_sweep",
+  "productName": "ChimneySweep",
+  "version": "1.0.0-prod",
+  "private": true,
+  "homepage": "./",
+  "main": "./electron/index.js",
+  "author": "Artem Podloboshnikov",
+  "description": "App cleans the project from unused files",
+  "repository": "",
+  "scripts": {
+    "build": "rollup -c",
+    "build:win": "npm run build && electron-builder -w",
+    "build:linux": "npm run build && electron-builder -l",
+    "build:mac": "npm run build && electron-builder -m",
+    "dev": "npm run build && electron .",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "license": "MIT License",
+  "keywords": [
+    "Electron"
+  ],
+  "build": {
+    "appId": "com.electron.xxx",
+    "win": {
+      "target": ["nsis"],
+      "icon": "./public/win/icon64x64.ico"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rmp"
+      ],
+      "category": "Utility"
+    },
+    "mac": {
+      "category": "Utility",
+      "type": "distribution",
+      "icon": "./public/mac/icon64x64.icns"
+    },
+    "portable": {
+      "artifactName": "ChimneySweep.exe"
+   },
+    "nsis": {
+      "installerIcon": "./public/win/icon64x64.ico",
+      "uninstallerIcon": "./public/win/icon64x64.ico",
+      "uninstallDisplayName": "ChimneySweep Uninstall",
+      "license": "LICENSE",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "build/**/*",
+      "public/**/*",
+      "electron/**/*",
+      "node_modules/**/*",
+      "dist/**/*",
+      "package.json",
+      "./electron/index.js"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "extraMetadata": {
+      "main": "./electron/index.js"
+    },
+    "asarUnpack": ["public/**/*"]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "electron": "^19.0.3",
+    "electron-builder": "^23.1.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^2.0.0"
+  }
+}
