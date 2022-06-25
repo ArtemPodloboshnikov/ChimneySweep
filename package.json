@@ -24,7 +24,9 @@
   "build": {
     "appId": "com.electron.xxx",
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "./public/win/icon64x64.ico"
     },
     "linux": {
@@ -45,7 +47,7 @@
     },
     "portable": {
       "artifactName": "ChimneySweep.exe"
-   },
+    },
     "nsis": {
       "installerIcon": "./public/win/icon64x64.ico",
       "uninstallerIcon": "./public/win/icon64x64.ico",
@@ -69,7 +71,9 @@
     "extraMetadata": {
       "main": "./electron/index.js"
     },
-    "asarUnpack": ["public/**/*"]
+    "asarUnpack": [
+      "public/**/*"
+    ]
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

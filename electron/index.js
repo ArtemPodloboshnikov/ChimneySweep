@@ -5,7 +5,8 @@ const {
   searchDependencies,
   replaceDataDependent,
   deleteDependents,
-  showFileInFileManager
+  showFileInFileManager,
+  orientationOfDocument
 } = require('./utils');
 const {
   WIDTH,
@@ -15,7 +16,8 @@ const {
   CHANNEL_REPLACE_DEPENDENT,
   CHANNEL_DELETE_DEPENDENT,
   CHANNEL_CLOSE_APP,
-  CHANNEL_SHOW_FILE
+  CHANNEL_SHOW_FILE,
+  CHANNEL_DOCUMENT_ORIENTATION
 } = require('./constants');
 
 app.whenReady().then(()=>{
@@ -23,6 +25,7 @@ app.whenReady().then(()=>{
   ipcMain.handle(CHANNEL_SEARCH_DEPENDENTS, searchDependencies);
   ipcMain.handle(CHANNEL_REPLACE_DEPENDENT, replaceDataDependent);
   ipcMain.handle(CHANNEL_DELETE_DEPENDENT, deleteDependents);
+  ipcMain.handle(CHANNEL_DOCUMENT_ORIENTATION, orientationOfDocument);
   ipcMain.on(CHANNEL_SHOW_FILE, showFileInFileManager);
   ipcMain.on(CHANNEL_CLOSE_APP, () => {
     app.quit();
@@ -34,7 +37,7 @@ function main () {
     const win = new BrowserWindow({
         width: WIDTH,
         height: HEIGHT,
-        icon: join(__dirname, "../public/icon64x64.png"),
+        icon: join(__dirname, "../public/icon256x256.png"),
         webPreferences: {
             nodeIntegration: true,
             preload: join(__dirname, 'preload.js'),
